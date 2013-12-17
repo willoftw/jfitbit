@@ -106,6 +106,10 @@ public class Fitbit {
 	
 	private String userId;
 
+	public String getUserId()
+	{
+		return userId;
+	}
 	/**
 	 * 
 	 * @param email address on Fitbit account
@@ -395,7 +399,7 @@ public class Fitbit {
 			throw new FitbitExecutionException( e );
 		}
 		
-		Matcher m = Pattern.compile( "./user/([A-Z0-9]*)" ).matcher( response );
+		Matcher m = Pattern.compile( "=\"/user/([A-Z0-9]{6})\"" ).matcher( response );
 		if ( !m.find( ) )
 			throw new FitbitAuthenticationException( );
 		

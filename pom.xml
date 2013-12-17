@@ -111,7 +111,8 @@
 			<groupId>com.claygregory</groupId>
 			<artifactId>cg-jcommons</artifactId>
 			<version>0.2-SNAPSHOT</version>
-			<scope>compile</scope>
+			<scope>system</scope>
+			<systemPath>${basedir}/cg-jcommons-0.2-SNAPSHOT.jar</systemPath>
 		</dependency>
 	</dependencies>
 </project>
