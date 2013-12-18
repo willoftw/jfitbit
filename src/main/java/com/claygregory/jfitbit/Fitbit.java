@@ -400,8 +400,10 @@ public class Fitbit {
 		}
 		
 		Matcher m = Pattern.compile( "=\"/user/([A-Z0-9]{6})\"" ).matcher( response );
-		if ( !m.find( ) || m.group(1) == "" )
+		if ( !m.find( ))
 			throw new FitbitAuthenticationException( );
+		else if (m.group(1) == "")
+			throw new FitbitRegexException( );
 		
 		return m.group( 1 );
 	}
